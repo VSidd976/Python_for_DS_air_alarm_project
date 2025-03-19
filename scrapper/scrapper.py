@@ -1,11 +1,15 @@
 import requests
 import json
+import os
+from dotenv import load_dotenv
 
-API_KEY = "df0f5e4fa1b5d08996524e8014aaae19"
+load_dotenv()
+
+ISW_API_KEY = os.getenv("ISW_API_KEY")
 url = "https://www.understandingwar.org/backgrounder/russia-cautiously-optimistic-following-zelensky-trump-meeting"  # Підставте потрібну URL-адресу
 
 response = requests.get("http://api.scraperapi.com", params={
-    "api_key": API_KEY,
+    "api_key": ISW_API_KEY,
     "url": url,
 })
 
